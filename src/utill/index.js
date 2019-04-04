@@ -8,6 +8,7 @@ var fs = require('fs');
 
 let FileEdit = {
   read: function (source) {
+    console.log('source', source)
     fs.readFile(source, function (err, data) {
      if (!err) {
       data = JSON.parse(data.toString());
@@ -26,6 +27,27 @@ let FileEdit = {
         console.log('保存成功')
       }
     })
+  },
+  /**
+   * 同步读取文件
+   * @param {String} 执行目录
+   * @returns {JSON} 返回JSON文件内容 以 'utf-8' 编码
+   */
+  readfileSync: function (path) {
+    var data = fs.readFileSync(`../${path}`, 'utf-8');
+    return data
+  },
+
+  readImg : function (path, res) {
+    fs.readFile(path,'binary',function(err,file){
+      if(err){
+        console.log(err);
+        return ;
+      }else{
+        res.write(file,'binary');
+        res.end();
+      }
+    });
   }
 };
 

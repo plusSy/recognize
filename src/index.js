@@ -15,12 +15,12 @@ var client = new AipOcrClient(APP_ID, API_KEY, SECRET_KEY);
 client.HttpClient = HttpClient
 
 // 本地图片
-var image = fs.readFileSync("../images/8.png").toString("base64");
+var image = fs.readFileSync("../images/ocj_1.png").toString("base64");
 
 // 调用通用文字识别（含位置信息版）, 图片参数为本地图片
 client.accurate(image, IMG_OPTIONS).then(function(result) {
   console.log(result)
-  fs.writeFile('../result/localImg_8.json', JSON.stringify(result), function (err) {
+  fs.writeFile('../result/localImg_9.json', JSON.stringify(result), function (err) {
     if (err) {
       console.log(err)
     } else {

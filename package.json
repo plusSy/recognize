@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "baidu-aip-sdk": "^2.3.9",
-    "fs": "0.0.1-security"
+    "cropperjs": "^1.5.1",
+    "fs": "0.0.1-security",
+    "gm": "^1.23.1"
   }
 }
